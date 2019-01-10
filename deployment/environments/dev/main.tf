@@ -3,11 +3,11 @@ provider "aws" {
 }
 
 # Variables passed in from the secrets file get declared here.
+# Variables from the secrets file. Set with -var-file=secrets.tfvars
 variable "redis_password" {
   type = "string"
 }
 
-# Variables passed in from the secrets file get declared here.
 variable "database_password" {
   type = "string"
 }
@@ -41,7 +41,7 @@ module "ccsearch" {
 
   vpc_id                    = "vpc-b741b4cc"
   environment               = "-dev"
-  git_revision              = "3357104502b433137d6b226d68a90abbe67bdef8"
+  git_revision              = "e48ff853d90fc58a1d21aba2ca7b6706b4fb9fc2"
   instance_type             = "t2.small"
   api_url                   = "https://api-dev.creativecommons.engineering"
 }
@@ -70,7 +70,6 @@ module "cccatalog-api" {
   root_shortening_url       = "dev.shares.cc"
   disable_global_throttling = "True"
 
-  # Secrets not checked into version control. Override with -var-file=secrets.tfvars
   database_password         = "${var.database_password}"
   django_secret_key         = "${var.django_secret_key}"
   wsgi_auth_credentials     = "${var.wsgi_auth_credentials}"
@@ -79,7 +78,7 @@ module "cccatalog-api" {
   redis_password            = "${var.redis_password}"
 }
 
-/* This is defined in the branch elasticsearch_auto_reindex.
+/* This is defined in the branch elasticsearch_auto_reindex, which needs to be merged.
 
 module "ingestion-server" {
   source = "../../modules/services/ingestion-server"
