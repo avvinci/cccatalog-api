@@ -2,12 +2,19 @@ provider "aws" {
   region = "us-east-1"
 }
 
+terraform {
+  backend "s3" {
+    bucket="cccatalog-api"
+    key="terraform/dev/terraform_dev.tfstate"
+    region="us-east-1"
+  }
+}
+
 # Variables passed in from the secrets file get declared here.
 # Variables from the secrets file. Set with -var-file=secrets.tfvars
 variable "redis_password" {
   type = "string"
 }
-
 variable "database_password" {
   type = "string"
 }
