@@ -5,7 +5,7 @@ resource "aws_route53_zone" "ingestion-private-dns" {
 }
 
 resource "aws_route53_record" "ingestion-private-a-record" {
-  name    = "ingestion.private"
+  name    = "${var.subdomain}"
   type    = "A"
   ttl     = 120
   records = ["${aws_instance.ingestion-server-ec2.private_ip}"]

@@ -85,8 +85,6 @@ module "cccatalog-api" {
   redis_password            = "${var.redis_password}"
 }
 
-/* This is defined in the branch elasticsearch_auto_reindex, which needs to be merged.
-
 module "ingestion-server" {
   source = "../../modules/services/ingestion-server"
 
@@ -107,5 +105,5 @@ module "ingestion-server" {
   poll_interval         = "60"
   docker_tag            = "0.3"
   instance_type         = "m5.large"
+  url_suffix            = "-dev"
 }
-*/

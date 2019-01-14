@@ -66,5 +66,10 @@ variable "upstream_db_host" {
 }
 
 variable "upstream_db_password" {
-  description= "The password of the intermediary database."
+  description = "The password of the intermediary database."
+}
+
+variable "subdomain" {
+  description = "Examples: dev.ingestion.private, prod.ingestion.private"
+  default = "dev"
 }
