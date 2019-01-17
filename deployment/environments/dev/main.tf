@@ -11,7 +11,6 @@ terraform {
 }
 
 # Variables passed in from the secrets file get declared here.
-# Variables from the secrets file. Set with -var-file=secrets.tfvars
 variable "redis_password" {
   type = "string"
 }
