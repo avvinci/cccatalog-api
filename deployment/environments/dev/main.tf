@@ -47,7 +47,7 @@ module "ccsearch" {
 
   vpc_id                    = "vpc-b741b4cc"
   environment               = "-dev"
-  git_revision              = "e48ff853d90fc58a1d21aba2ca7b6706b4fb9fc2"
+  git_revision              = "e2e46412adf0a622ed805b34dc4a95fa747b2755"
   instance_type             = "t2.small"
   api_url                   = "https://api-dev.creativecommons.engineering"
 }
@@ -104,5 +104,5 @@ module "ingestion-server" {
   poll_interval         = "60"
   docker_tag            = "0.3"
   instance_type         = "m5.large"
-  url_suffix            = "-dev"
+  subdomain             = "dev"
 }

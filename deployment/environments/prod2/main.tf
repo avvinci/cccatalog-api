@@ -45,7 +45,7 @@ module "cccatalog-api" {
   source = "../../modules/services/cccatalog-api"
 
   vpc_id                    = "vpc-b741b4cc"
-  name_suffix               = "-prod2"
+  name_suffix               = "-prod"
   environment               = "prod2"
   min_size                  = 3
   max_size                  = 3
@@ -60,7 +60,7 @@ module "cccatalog-api" {
   elasticsearch_port        = "80"
   aws_region                = "us-east-1"
   elasticsearch_url         = "search-cccatalog-es-prod5-thumbfix-cmkzg7lodbsalll7suftj55pv4.us-east-1.es.amazonaws.com"
-  redis_host                = "ip-172-30-1-251.ec2.internal"
+  redis_host                = "ip-172-30-1-210.ec2.internal"
   ccc_api_host              = "api.creativecommons.engineering"
   root_shortening_url       = "shares.cc"
 
@@ -78,7 +78,7 @@ module "ccsearch" {
 
   vpc_id                    = "vpc-b741b4cc"
   environment               = "-prod2"
-  git_revision              = "90a0cf95c3f7d41c6ebf772791c7026da8edc9e0"
+  git_revision              = "e2e46412adf0a622ed805b34dc4a95fa747b2755"
   instance_type             = "t2.small"
   api_url                   = "https://api.creativecommons.engineering"
 }
