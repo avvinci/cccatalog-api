@@ -64,4 +64,4 @@ python3 test/integration_tests.py
 ```
 
 ## Deploying the API
-The API infrastructure is orchestrated using Terraform hosted in creativecommons/ccsearch-infrastructure. More details can be found on the [this wiki page](https://wikijs.creativecommons.org/tech/cc-search/operations).
+The API infrastructure is orchestrated using Terraform hosted in creativecommons/ccsearch-infrastructure. More details can be found on [this wiki page](https://wikijs.creativecommons.org/tech/cc-search/operations).
